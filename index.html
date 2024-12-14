@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrossel Automático</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Bodas de Cristal</h1>
+
+        <div class="carrossel">
+            <div class="carrossel-imagens">
+              <img src="Imagem do WhatsApp de 2024-12-14 à(s) 13.25.42_e539d973.jpg" alt="Imagem 1">
+              <img src="Imagem do WhatsApp de 2024-12-14 à(s) 13.22.55_f3e33d8e.jpg" alt="Imagem 2">
+              <img src="Imagem do WhatsApp de 2024-12-14 à(s) 13.26.51_5dd75ed4.jpg" alt="Imagem 3">
+              <img src="Imagem do WhatsApp de 2024-12-14 à(s) 13.27.40_5c6971f6.jpg" alt="Imagem 4">
+            </div>
+        </div>
+        
+        <audio controls>
+            <source src="Coldplay_-_Viva_la_Vida_Lyrics_[_YouConvert.net_].mp3" type="audio/mp3">
+        </audio>
+
+        <div class="texto">
+            <h2>
+              Celebre o amor que conquistaram e o companheirismo que desevolveram ao longo desses 15 anos juntos. Relembre conquista, desafios superados e momentos marcantes. Parabéns!!!! Amamos vocês.
+            </h2>
+        </div>
+    </div>
+
+    <script>
+      let index = 0;
+
+      function mostrarCarrossel() {
+        const imagens = document.querySelectorAll('.carrossel-imagens img');
+        const totalImagens = imagens.length;
+
+        index++;
+
+        if (index >= totalImagens) {
+          index = 0;
+        }
+
+        const deslocamento = -index * 100;
+        document.querySelector('.carrossel-imagens').style.transform = `translateX(${deslocamento}%)`;
+      }
+
+      setInterval(mostrarCarrossel, 3000); // Troca a imagem a cada 3 segundos
+    </script>
+</body>
+</html>
